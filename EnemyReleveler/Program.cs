@@ -74,18 +74,26 @@ namespace EnemyReleveler
 
                 bool skip = true;
 
-                foreach (var rank in getter.Factions)
+                foreach(var eRule in enemyRules)
                 {
-                    if(!rank.Faction.TryResolve(state.LinkCache, out var factionRecord)) continue;
-                    var faction = factionRecord.EditorID ?? "";
-                    if (enemyRules.ContainsKey(faction))
+                    foreach (var rank in getter.Factions)
                     {
-                        skip = false;
-                        rule = enemyRules[faction];
+                        if(!rank.Faction.TryResolve(state.LinkCache, out var factionRecord)) continue;
+                        var faction = factionRecord.EditorID ?? "";
+
+                        if eRule.key = faction
+                        {
+                            skip = false;
+                            rule = eRule;
+                        }
+    
+                        if (skip == false) break;
+                      
                     }
                     if (skip == false) break;
-                }
+               }
 
+                
                 if (skip) continue;
 
                 //Start releveling
