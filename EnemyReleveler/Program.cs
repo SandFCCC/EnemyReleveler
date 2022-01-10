@@ -81,7 +81,7 @@ namespace EnemyReleveler
                         if(!rank.Faction.TryResolve(state.LinkCache, out var factionRecord)) continue;
                         var faction = factionRecord.EditorID ?? "";
 
-                        if(eRule.key = faction)
+                        if(eRule.key == faction)
                         {
                             skip = false;
                             rule = eRule;
