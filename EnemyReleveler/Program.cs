@@ -97,7 +97,7 @@ namespace EnemyReleveler
                 if (skip) continue;
 
                 //Start releveling
-                Console.WriteLine("npc: " +npc.EditorID)
+                Console.WriteLine("npc: " +npc.EditorID);
                 var npc = getter.DeepCopy();
                 if (npc.Configuration.Level is IPcLevelMult)
                 {
