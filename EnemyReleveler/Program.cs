@@ -35,6 +35,7 @@ namespace EnemyReleveler
             Skyrim.Npc.Drennen,
             Skyrim.Npc.Breya,
             Skyrim.Npc.dunHunterBear,
+            Skyrim.Npc.DW_EncVampire06Template,
             Dawnguard.Npc.DLC1HowlSummonWerewolf,
         };
 
