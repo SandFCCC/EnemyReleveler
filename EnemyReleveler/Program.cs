@@ -120,7 +120,7 @@ namespace EnemyReleveler
                 }
                 catch (Exception e)
                 {
-                    Console.WriteLine("{0} Exception caught.", e));
+                    Console.WriteLine("{0} Exception caught.", e);
                 }
             }
             printWarnings();
