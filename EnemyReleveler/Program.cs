@@ -41,6 +41,7 @@ namespace EnemyReleveler
         public static List<string> npcsToIgnoreByEditorID = new()
         {
             "DW_EncVampire06Template",
+            "DW_EncVampire_new_breton01_assassin",
         };
         
         public static int[][] rule = new int[][]{
