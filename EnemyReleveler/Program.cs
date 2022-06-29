@@ -35,7 +35,6 @@ namespace EnemyReleveler
             Skyrim.Npc.Drennen,
             Skyrim.Npc.Breya,
             Skyrim.Npc.dunHunterBear,
-            Skyrim.Npc.DW_EncVampire06Template,
             Dawnguard.Npc.DLC1HowlSummonWerewolf,
         };
 
@@ -72,7 +71,7 @@ namespace EnemyReleveler
                 {
                     continue;
                 }
-
+                if getter.EditorID == "DW_EncVampire06Template" continue;
                 bool skip = true;
 
                 foreach(var eRule in enemyRules.Keys)
@@ -98,7 +97,7 @@ namespace EnemyReleveler
                 if (skip) continue;
 
                 //Start releveling
-                Console.WriteLine("npc: " +getter);
+                Console.WriteLine("npc: " +getter.EditorID);
                 var npc = getter.DeepCopy();
                 if (npc.Configuration.Level is IPcLevelMult)
                 {
