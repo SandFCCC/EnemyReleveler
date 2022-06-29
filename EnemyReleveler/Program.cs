@@ -104,17 +104,24 @@ namespace EnemyReleveler
 
                 //Start releveling
                 Console.WriteLine("npc: " +getter.EditorID);
-                var npc = getter.DeepCopy();
-                if (npc.Configuration.Level is IPcLevelMult)
+                try
                 {
-                    EditValue(npc, LevelType.MinLevel, rule);
-                    EditValue(npc, LevelType.MaxLevel, rule);
+                    var npc = getter.DeepCopy();
+                    if (npc.Configuration.Level is IPcLevelMult)
+                    {
+                        EditValue(npc, LevelType.MinLevel, rule);
+                        EditValue(npc, LevelType.MaxLevel, rule);
+                    }
+                    else
+                    {
+                        EditValue(npc, LevelType.Level, rule);
+                    }
+                    state.PatchMod.Npcs.GetOrAddAsOverride(npc);
                 }
-                else
+                catch (Exception e)
                 {
-                    EditValue(npc, LevelType.Level, rule);
+                    Console.WriteLine("{0} Exception caught.", e));
                 }
-                state.PatchMod.Npcs.GetOrAddAsOverride(npc);
             }
             printWarnings();
         }
