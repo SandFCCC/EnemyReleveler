@@ -71,7 +71,7 @@ namespace EnemyReleveler
                 {
                     continue;
                 }
-                if getter.EditorID == "DW_EncVampire06Template" continue;
+                if (getter.EditorID == "DW_EncVampire06Template") continue;
                 bool skip = true;
 
                 foreach(var eRule in enemyRules.Keys)
