@@ -37,7 +37,12 @@ namespace EnemyReleveler
             Skyrim.Npc.dunHunterBear,
             Dawnguard.Npc.DLC1HowlSummonWerewolf,
         };
-
+        
+        public static List<string> npcsToIgnoreByEditorID = new()
+        {
+            "DW_EncVampire06Template",
+        };
+        
         public static int[][] rule = new int[][]{
                     new int[] {0, 0},
                     new int[] {0, 0}
@@ -71,7 +76,7 @@ namespace EnemyReleveler
                 {
                     continue;
                 }
-                if (getter.EditorID == "DW_EncVampire06Template") continue;
+                if (npcsToIgnoreByEditorID.Contains(getter.EditorID)) continue;
                 bool skip = true;
 
                 foreach(var eRule in enemyRules.Keys)
